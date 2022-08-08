@@ -23,6 +23,8 @@ int optFourRun();
 void showError();
 void optTwo();
 int optTwoRun();
+void optThree();
+int optThreeRun();
 
 
 int main()
@@ -78,7 +80,8 @@ int main()
 			optTwo();
 		}
 		if (opt == 3) {
-
+			system("CLS");
+			optThree();
 		}
 		if (opt == 4) {
 			system("CLS");
@@ -448,4 +451,48 @@ void optTwo() {
 	}
 	// make changes and calcs here 
 
+}
+
+void optThree() {
+	int start_amount = 0;
+	int dep_amount;
+	int dep = 0;
+	int wid = 0;
+	int with_amount;
+	int with = 0;
+	int* deposits = new int[100];
+	int* withd = new int[100];
+
+	cout << "PLEASE READ THE FOLLOWING INSTRUCTIONS " << endl; 
+	cout << "This program will balance your checkbook. " << endl;
+
+	cout << "Enter your beginning balance: $";
+	cin >> start_amount;
+	cout << "How many deposits did you have the past month: ";
+	cin >> dep_amount;
+	for (int i = 0; i < dep_amount; i++) {
+		dep = 0;
+		cout << "Enter deposit number " << i + 1 << ": ";
+		cin >> dep;
+		deposits[i] = dep;
+	}
+	for (int i = 0; i < dep_amount; i++) {
+		cout << deposits[i] << endl;
+	}
+	cout << endl;
+
+	cout << "How many withdrawls did you have the past months: ";
+	cin >> with_amount;
+	for (int i = 0; i < with_amount; i++) {
+		wid = 0;
+		cout << "Enter deposit number " << i + 1 << ": ";
+		cin >> wid;
+		withd[i] = wid;
+	}
+	for (int i = 0; i < with_amount; i++) {
+		cout << withd[i] << endl;
+	}
+
+	system("pause");
+	cout << endl;
 }
