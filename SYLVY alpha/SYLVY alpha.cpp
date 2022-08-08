@@ -42,6 +42,7 @@ int main()
 	while (run)
 	{
 		cout << "big";
+		cout << "he";
 		cout << "new things addded";
 		cout << "hello ";
 		showMenu();
