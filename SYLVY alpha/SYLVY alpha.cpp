@@ -8,6 +8,8 @@
 #include<iostream>
 #include<iomanip>
 #include <string>
+#include <fstream>
+
 
 using namespace std;
 
@@ -23,15 +25,12 @@ void optTwo();
 int optTwoRun();
 
 
-
 int main()
 {
 	// variable declaration
 	string name;
 	bool run = true;
 	int opt;
-
-
 
 	showIntroduction();
 	cout << "Enter your name?: ";
@@ -41,9 +40,9 @@ int main()
 	system("pause");
 	system("CLS");
 	// Main loop goes here.
+	// read main loop 
 	while (run)
 	{
-		cout << "hello ";
 		showMenu();
 		cout << "Enter your selection here: ";
 		cin >> opt;
@@ -76,7 +75,7 @@ int main()
 		}
 		if (opt == 2) {
 			system("CLS");
-			optRunTwo();
+			optTwo();
 		}
 		if (opt == 3) {
 
@@ -100,6 +99,7 @@ int main()
 			}
 			break;
 		}
+		
 	}
 }
 //All functions defined here
@@ -429,12 +429,23 @@ void showError() {
 	cout << "************************************************************" << endl;
 }
 
-void optTwo()
-{
-	
-}
+void optTwo() {
+	string a;
+	string b;
+	ifstream infile("costs.txt");
+	string* arra = new string[100];
+	string* arrb = new string[100];
+	int counter = 0;
+	while (infile >> a >> b)
+	{
+		arra[counter] = a;
+		arrb[counter] = b;
+		counter++;
 
-int optTwoRun()
-{
-	
+	}
+	for (int i = 0; i < counter; i++) {
+		cout << arrb[i] << endl;
+	}
+	// make changes and calcs here 
+
 }

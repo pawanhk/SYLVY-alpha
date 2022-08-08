@@ -1,0 +1,4 @@
+Books 45.01
+Pens 21.03
+Pencils 10.90
+Hats 50.00
