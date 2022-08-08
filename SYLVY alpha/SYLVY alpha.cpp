@@ -41,6 +41,7 @@ int main()
 	// Main loop goes here.
 	while (run)
 	{
+		cout << "new things addded";
 		cout << "hello ";
 		showMenu();
 		cout << "Enter your selection here: ";
