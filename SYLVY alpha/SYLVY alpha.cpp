@@ -18,6 +18,7 @@ void optOne();
 int optOneRun();
 void optFour();
 int optFourRun();
+void showError();
 
 
 
@@ -40,7 +41,7 @@ int main()
 	// Main loop goes here.
 	while (run)
 	{
-		cout << "vigay" << endl;
+		cout << "hello ";
 		showMenu();
 		cout << "Enter your selection here: ";
 		cin >> opt;
@@ -80,6 +81,21 @@ int main()
 		if (opt == 4) {
 			system("CLS");
 			optFourRun();
+		}
+		else {
+			string opte;
+			system("CLS");
+			showError();
+			cout << "Would you like to re-enter the main menu? (Y/N): ";
+			cin >> opte;
+			if (opte == "y" || opte == "Y") {
+				system("CLS");
+				continue;
+			}
+			else {
+				break;
+			}
+			break;
 		}
 	}
 }
@@ -246,157 +262,166 @@ void optFour()
 }
 
 int optFourRun() {
-		int hour; // gives the hour for both
-		int min; // gives the min for both
-		// civ time
-		string ctime;
-		int ctimeh;
-		int ctimem;
-		string sect;
-		// mil time
-		string mtime;
-		int mtimeh;
-		int mtimem;
-		// indep
-		string choice;
-		string fchoice;
-		string Civilian;
-		string Military;
-		cout << "**************************************************************" << endl;
-		cout << "**************************************************************" << endl;
-		cout << "****          C O N V E R S I O N   U T I L I T Y         ****" << endl;
-		cout << "****                                                      ****" << endl;
-		cout << "****                                                      ****" << endl;
-		cout << "****          Convert from Civilian to Military Time      ****" << endl;
-		cout << "****             or from Military to Civilian Time        ****" << endl;
-		cout << "****                                                      ****" << endl;
-		cout << "****                                                      ****" << endl;
-		cout << "****  Enter C for Civilian or M for Military: ";
-		cin >> choice;
-		cout << "****                                                      ****" << endl;
-		cout << "****                                                      ****" << endl;
-		cout << "****                                                      ****" << endl;
-		if (choice == "C") {
-			fchoice = "Civilian";
-		}
-		else {
-			fchoice = "Military";
-		}
-		cout << "****  Enter your time in " << fchoice << "                ****" << endl;
-		cout << "****  Enter your hour: ";
-		cin >> hour;
-		cout << "****  Enter your minutes: ";
-		cin >> min;
-		if (choice != "M") {
-			cout << "****  Enter either AM or PM: ";
-			cin >> sect;
-		}
-		// algo for convertion 
-		// from civ to milt
-		if (choice == "C") {
-			// civ ti milt
-			if (sect == "AM") {
-				// conditions 
-				if (hour == 12) {
-					mtimeh = 0;
-					mtimem = min;
-					if (min > 10) {
-						ctime = to_string(hour) + ":" + to_string(min) + sect;
-						mtime = to_string(mtimeh) + ":" + to_string(mtimem);
-					}
-					else {
-						ctime = to_string(hour) + ":0" + to_string(min) + sect;
-						mtime = to_string(mtimeh) + ":0" + to_string(mtimem);
-					}
-
+	int hour; // gives the hour for both
+	int min; // gives the min for both
+	// civ time
+	string ctime;
+	int ctimeh;
+	int ctimem;
+	string sect;
+	// mil time
+	string mtime;
+	int mtimeh;
+	int mtimem;
+	// indep
+	string choice;
+	string fchoice;
+	string Civilian;
+	string Military;
+	cout << "**************************************************************" << endl;
+	cout << "**************************************************************" << endl;
+	cout << "****          C O N V E R S I O N   U T I L I T Y         ****" << endl;
+	cout << "****                                                      ****" << endl;
+	cout << "****                                                      ****" << endl;
+	cout << "****          Convert from Civilian to Military Time      ****" << endl;
+	cout << "****             or from Military to Civilian Time        ****" << endl;
+	cout << "****                                                      ****" << endl;
+	cout << "****                                                      ****" << endl;
+	cout << "****  Enter C for Civilian or M for Military: ";
+	cin >> choice;
+	cout << "****                                                      ****" << endl;
+	cout << "****                                                      ****" << endl;
+	cout << "****                                                      ****" << endl;
+	if (choice == "C") {
+		fchoice = "Civilian";
+	}
+	else {
+		fchoice = "Military";
+	}
+	cout << "****  Enter your time in " << fchoice << "                         ****" << endl;
+	cout << "****  Enter your hour: ";
+	cin >> hour;
+	cout << "****  Enter your minutes: ";
+	cin >> min;
+	if (choice != "M") {
+		cout << "****  Enter either AM or PM: ";
+		cin >> sect;
+	}
+	// algo for convertion 
+	// from civ to milt
+	if (choice == "C") {
+		// civ ti milt
+		if (sect == "AM") {
+			// conditions 
+			if (hour == 12) {
+				mtimeh = 0;
+				mtimem = min;
+				if (min > 10) {
+					ctime = to_string(hour) + ":" + to_string(min) + sect;
+					mtime = to_string(mtimeh) + ":" + to_string(mtimem);
 				}
 				else {
-					mtimeh = hour;
-					mtimem = min;
-					if (min > 10) {
-						ctime = to_string(hour) + ":" + to_string(min) + sect;
-						mtime = to_string(mtimeh) + ":" + to_string(mtimem);
-					}
-					else {
-						ctime = to_string(hour) + ":0" + to_string(min) + sect;
-						mtime = to_string(mtimeh) + ":0" + to_string(mtimem);
-					}
-					
+					ctime = to_string(hour) + ":0" + to_string(min) + sect;
+					mtime = to_string(mtimeh) + ":0" + to_string(mtimem);
 				}
-			}
-			if (sect == "PM") {
-				if (hour == 12) {
-					mtimeh = 12;
-					mtimem = min;
-					if (min > 10) {
-						ctime = to_string(hour) + ":" + to_string(min) + sect;
-						mtime = to_string(mtimeh) + ":" + to_string(mtimem);
-					}
-					else {
-						ctime = to_string(hour) + ":0" + to_string(min) + sect;
-						mtime = to_string(mtimeh) + ":0" + to_string(mtimem);
-					}
-					
 
+			}
+			else {
+				mtimeh = hour;
+				mtimem = min;
+				if (min > 10) {
+					ctime = to_string(hour) + ":" + to_string(min) + sect;
+					mtime = to_string(mtimeh) + ":" + to_string(mtimem);
 				}
 				else {
-					mtimeh = hour + 12;
-					mtimem = min;
-					if (min > 10) {
-						ctime = to_string(hour) + ":" + to_string(min) + sect;
-						mtime = to_string(mtimeh) + ":" + to_string(mtimem);
-					}
-					else {
-						ctime = to_string(hour) + ":0" + to_string(min) + sect;
-						mtime = to_string(mtimeh) + ":0" + to_string(mtimem);
-					}
+					ctime = to_string(hour) + ":0" + to_string(min) + sect;
+					mtime = to_string(mtimeh) + ":0" + to_string(mtimem);
+				}
+
+			}
+		}
+		if (sect == "PM") {
+			if (hour == 12) {
+				mtimeh = 12;
+				mtimem = min;
+				if (min > 10) {
+					ctime = to_string(hour) + ":" + to_string(min) + sect;
+					mtime = to_string(mtimeh) + ":" + to_string(mtimem);
+				}
+				else {
+					ctime = to_string(hour) + ":0" + to_string(min) + sect;
+					mtime = to_string(mtimeh) + ":0" + to_string(mtimem);
+				}
+
+
+			}
+			else {
+				mtimeh = hour + 12;
+				mtimem = min;
+				if (min > 10) {
+					ctime = to_string(hour) + ":" + to_string(min) + sect;
+					mtime = to_string(mtimeh) + ":" + to_string(mtimem);
+				}
+				else {
+					ctime = to_string(hour) + ":0" + to_string(min) + sect;
+					mtime = to_string(mtimeh) + ":0" + to_string(mtimem);
 				}
 			}
 		}
-		if (choice == "M") {
-			// milt to civ 
-			if (hour == 0) {
-				ctimeh = 12;
-				ctimem = min;
-				ctime = to_string(ctimeh) + ":" + to_string(ctimem) + "AM";
-				mtime = to_string(hour) + ":" + to_string(min);
-			}
-			else if (hour < 12) {
-				ctimeh = hour;
-				ctimem = min;
-				ctime = to_string(ctimeh) + ":" + to_string(ctimem) + "AM";
-				mtime = "0" + to_string(hour) + ":" + to_string(min);
-			}
-			else if (hour > 12) {
-				ctimeh = hour - 12;
-				ctimem = min;
-				ctime = to_string(ctimeh) + ":" + to_string(ctimem) + "PM";
-				mtime = to_string(hour) + ":" + to_string(min);
-			}
+	}
+	if (choice == "M") {
+		// milt to civ 
+		if (hour == 0) {
+			ctimeh = 12;
+			ctimem = min;
+			ctime = to_string(ctimeh) + ":" + to_string(ctimem) + "AM";
+			mtime = to_string(hour) + ":" + to_string(min);
 		}
-		cout << "****                                                      ****" << endl;
-		cout << "****                                                      ****" << endl;
-		cout << "****  Military Time =  "<< mtime <<"                      ****" << endl;
-		cout << "****  Civilian Time =  "<< ctime <<"                      ****" << endl;
-		cout << "****                                                      ****" << endl;
-		cout << "****                                                      ****" << endl;
-		cout << "**************************************************************" << endl;
-		cout << "**************************************************************" << endl;
+		else if (hour < 12) {
+			ctimeh = hour;
+			ctimem = min;
+			ctime = to_string(ctimeh) + ":" + to_string(ctimem) + "AM";
+			mtime = "0" + to_string(hour) + ":" + to_string(min);
+		}
+		else if (hour > 12) {
+			ctimeh = hour - 12;
+			ctimem = min;
+			ctime = to_string(ctimeh) + ":" + to_string(ctimem) + "PM";
+			mtime = to_string(hour) + ":" + to_string(min);
+		}
+	}
+	cout << "****                                                      ****" << endl;
+	cout << "****                                                      ****" << endl;
+	cout << "****  Military Time =  " << mtime << "                              ****" << endl;
+	cout << "****  Civilian Time =  " << ctime << "                             ****" << endl;
+	cout << "****                                                      ****" << endl;
+	cout << "****                                                      ****" << endl;
+	cout << "**************************************************************" << endl;
+	cout << "**************************************************************" << endl;
 
-		string ans1;
-		cout << "**** Would you like to run the program again? <Y/N>: ";
-		cin >> ans1;
+	string ans1;
+	cout << "**** Would you like to run the program again? <Y/N>: ";
+	cin >> ans1;
 
-		if (ans1 == "y" || ans1 == "Y")
-		{
-			system("CLS");
-			optFourRun();
-			return 1;
-		}
-		else if (ans1 == "N" || ans1 == "n")		// To run conditions in order to check if the user wants to run the program again or not.
-		{
-			showMenu();
-			system("CLS");
-			return 0;
-		}
+	if (ans1 == "y" || ans1 == "Y")
+	{
+		system("CLS");
+		optFourRun();
+		return 1;
+	}
+	else if (ans1 == "N" || ans1 == "n")		// To run conditions in order to check if the user wants to run the program again or not.
+	{
+		showMenu();
+		system("CLS");
+		return 0;
+	}
+}
+
+void showError() {
+	cout << "************************************************************" << endl;
+	cout << "************************************************************" << endl;
+	cout << "*****************      I N V A L I D      ******************" << endl;
+	cout << "*****************        R E P L Y        ******************" << endl;
+	cout << "************************************************************" << endl;
+	cout << "************************************************************" << endl;
 }
