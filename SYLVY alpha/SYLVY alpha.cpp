@@ -43,6 +43,7 @@ int main()
 	{
 		cout << "new";
 		cout << "big";
+		cout << "m";
 		cout << "he";
 		cout << "new things addded";
 		cout << "hello ";
