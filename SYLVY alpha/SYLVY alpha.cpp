@@ -19,6 +19,8 @@ int optOneRun();
 void optFour();
 int optFourRun();
 void showError();
+void optTwo();
+int optTwoRun();
 
 
 
@@ -73,7 +75,8 @@ int main()
 			}
 		}
 		if (opt == 2) {
-
+			system("CLS");
+			optRunTwo();
 		}
 		if (opt == 3) {
 
@@ -424,4 +427,14 @@ void showError() {
 	cout << "*****************        R E P L Y        ******************" << endl;
 	cout << "************************************************************" << endl;
 	cout << "************************************************************" << endl;
+}
+
+void optTwo()
+{
+	
+}
+
+int optTwoRun()
+{
+	
 }
