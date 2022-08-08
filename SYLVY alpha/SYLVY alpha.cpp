@@ -455,6 +455,7 @@ void optTwo() {
 
 void optThree() {
 	int start_amount = 0;
+	int total_dep = 0;
 	int dep_amount;
 	int dep = 0;
 	int wid = 0;
@@ -474,10 +475,9 @@ void optThree() {
 		dep = 0;
 		cout << "Enter deposit number " << i + 1 << ": ";
 		cin >> dep;
+		total_dep += dep;
 		deposits[i] = dep;
-	}
-	for (int i = 0; i < dep_amount; i++) {
-		cout << deposits[i] << endl;
+
 	}
 	cout << endl;
 
@@ -489,10 +489,10 @@ void optThree() {
 		cin >> wid;
 		withd[i] = wid;
 	}
-	for (int i = 0; i < with_amount; i++) {
-		cout << withd[i] << endl;
-	}
-
+	// get values now 
+	int* balance = new int[100];
+	balance[0] = start_amount + total_dep;
+	
 	cout << "#################################################################" << endl;
 	cout << "######## C H E C K B O O K  B A L A N C E S H E E T #############" << endl;
 	cout << "#################################################################" << endl;
@@ -502,15 +502,19 @@ void optThree() {
 	cout << "#################################################################" << endl;
 	cout << "                      *                      *                    " << endl;
 
-
-
-
-
-
-
-
-
-
+	cout << "Depositis: " << endl;
+	for (int i = 0; i < dep_amount; i++) { 
+		cout << deposits[i] << endl;
+	}
+	cout << "Withdrawls: " << endl;
+	for (int i = 0; i < with_amount; i++) {
+		cout << withd[i] << endl;
+	}
+	cout << "Balance: " << endl;
+	for (int i = 0; i <= with_amount; i++) {
+		balance[i + 1] = balance[i] - withd[i];
+		cout << balance[i] << endl;
+	}
 
 
 	cout << "                      *                      *                    " << endl;
