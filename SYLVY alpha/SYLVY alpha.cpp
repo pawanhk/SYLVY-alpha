@@ -466,7 +466,7 @@ void optTwo() {
 	cout << "* \t4 : the total purchase price                                        *" << endl;
 	cout << "*****************************************************************************" << endl;
 	
-
+	system("pause");
 }
 
 void optThree() {
