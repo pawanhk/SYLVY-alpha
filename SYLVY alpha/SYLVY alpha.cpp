@@ -465,11 +465,11 @@ void optThree() {
 	int* withd = new int[100];
 
 	cout << "PLEASE READ THE FOLLOWING INSTRUCTIONS " << endl; 
-	cout << "This program will balance your checkbook. " << endl;
+	cout << "\nThis program will balance your checkbook. " << endl;
 
-	cout << "Enter your beginning balance: $";
+	cout << "\nEnter your beginning balance: $";
 	cin >> start_amount;
-	cout << "How many deposits did you have the past month: ";
+	cout << "\nHow many deposits did you have the past month: ";
 	cin >> dep_amount;
 	for (int i = 0; i < dep_amount; i++) {
 		dep = 0;
@@ -485,7 +485,7 @@ void optThree() {
 	cin >> with_amount;
 	for (int i = 0; i < with_amount; i++) {
 		wid = 0;
-		cout << "Enter deposit number " << i + 1 << ": ";
+		cout << "Enter withdrawl number " << i + 1 << ": ";
 		cin >> wid;
 		withd[i] = wid;
 	}
@@ -493,39 +493,39 @@ void optThree() {
 	int* balance = new int[100];
 	balance[0] = start_amount + total_dep;
 	
-	cout << "#################################################################" << endl;
-	cout << "######## C H E C K B O O K  B A L A N C E S H E E T #############" << endl;
-	cout << "#################################################################" << endl;
-	cout << "                      *                      *                    " << endl;
-	cout << "                      *                      *                  " << endl;
-	cout << "        DEPOSITS      *     Withdrawls       *      BALANCE		 " << endl;
-	cout << "#################################################################" << endl;
-	cout << "                      *                      *                    " << endl;
-
-	cout << "Depositis: " << endl;
-	for (int i = 0; i < dep_amount; i++) { 
-		cout << deposits[i] << endl;
+	cout << "#####################################################################################" << endl;
+	cout << "################# C H E C K B O O K  B A L A N C E S H E E T ########################" << endl;
+	cout << "#####################################################################################" << endl;
+	cout << "*                                                                                   *" << endl;
+	cout << "*																				     *" << endl;
+	cout << "            DEPOSITS                     Withdrawls                    BALANCE	      " << endl;
+	cout << "#####################################################################################" << endl;
+	cout << "*                                                                                   *" << endl;
+	for (int i = 0; i < dep_amount; i++) 
+	{
+		cout << "\t       " << deposits[i] << endl;
 	}
-	cout << "Withdrawls: " << endl;
-	for (int i = 0; i < with_amount; i++) {
-		cout << withd[i] << endl;
+	
+	for (int i = 0; i < with_amount; i++) 
+	{
+		cout << " \t\t\t\t\t     " << withd[i] <<"\t\t" << endl;
 	}
-	cout << "Balance: " << endl;
-	for (int i = 0; i <= with_amount; i++) {
+	
+	for (int i = 0; i <= with_amount; i++)
+	{
 		balance[i + 1] = balance[i] - withd[i];
-		cout << balance[i] << endl;
+		cout << "\t\t\t\t\t\t\t\t\t " << balance[i] << "\t\t\t\t" << endl;
 	}
 
-
-	cout << "                      *                      *                    " << endl;
-	cout << "                      *                      *                    " << endl;
-	cout << "                      *                      *                    " << endl;
-	cout << "                      *                      *                    " << endl;
-	cout << "                      *                      *                    " << endl;
-	cout << "                      *                      *                    " << endl;
-	cout << "                      *                      *                    " << endl;
-	cout << "#################################################################" << endl;
-	cout << "#################################################################" << endl;
+	cout << "*                                                                                    *" << endl;
+	cout << "*                                                                                    *" << endl;
+	cout << "*                                                                                    *" << endl;
+	cout << "*                                                                                    *" << endl;
+	cout << "*                                                                                    *" << endl;
+	cout << "*                                                                                    *" << endl;
+	cout << "*                                                                                    *" << endl;
+	cout << "######################################################################################" << endl;
+	cout << "######################################################################################" << endl;
 
 	system("pause");
 	cout << endl;
