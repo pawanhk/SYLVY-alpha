@@ -476,7 +476,7 @@ void optTwo() {
 	cout << "-----------------------------------------------------------" << endl;
 	// insert logic**
 	for (int i = 0; i < counter; i++) {
-		cout << "    " << arra[i] << endl;
+		//cout << "    " << arra[i] << endl;
 	}
 	
 	for (int i = 0; i < counter; i++) {
@@ -486,10 +486,14 @@ void optTwo() {
 		double taxi = stod(arrb[i]);
 		taxes[i] = taxi*0.06;
 		total_sales += taxes[i];
-		cout << "\t\t\t\t" << "$ " << arrb[i] << endl;
+		//cout << "\t\t\t\t" << "$ " << arrb[i] << endl;
 	}
 	for (int i = 0; i < counter; i++) {
-		cout << "\t\t\t\t\t\t" << "$ " << taxes[i] << endl;
+		//cout << "\t\t\t\t\t\t" << "$ " << taxes[i] << endl;
+	}
+	// final output on the same line 
+	for (int i = 0; i < counter; i++) {
+		cout << "    " << arra[i] << "   " << arrb[i] << "   " << taxes[i] << endl;
 	}
 	grand_total = total_amount + total_sales;
 	cout << "-----------------------------------------------------------" << endl;
