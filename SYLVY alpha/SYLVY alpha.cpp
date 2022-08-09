@@ -453,6 +453,19 @@ void optTwo() {
 		cout << arrb[i] << endl;
 	}
 	// make changes and calcs here 
+	
+	cout << "*****************************************************************************" << endl;
+	cout << "* \t          S A L E S  R E C E I P T  F R O M                   *" << endl;
+	cout << "*											                                 *" << endl;
+	cout << "* \t                A  F I L E  P R O G R A M                                         *" << endl;
+	cout << "*											                                 *" << endl;
+	cout << "*   This program will Print out a detailed receipt that will display ....   *" << endl;
+	cout << "* \t1 : the name of item followed by price                              *" << endl;
+	cout << "* \t2 : the total sales price                                           *" << endl;
+	cout << "* \t3 : the amount of sales tax                                         *" << endl;
+	cout << "* \t4 : the total purchase price                                        *" << endl;
+	cout << "*****************************************************************************" << endl;
+	
 
 }
 
@@ -552,3 +565,4 @@ void optThree() {
 
 	cout << endl;
 }
+
