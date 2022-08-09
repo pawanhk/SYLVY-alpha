@@ -504,9 +504,18 @@ void optTwo() {
 	cout << "    Grand Total                              $ " << grand_total << endl;
 
 	cout << endl << endl << endl;
-	cout << "Do you want to calculate another file worth of sales item ? (Y/N) : " << endl;
+	string opt22;
+	cout << "Do you want to calculate another file worth of sales item ? (Y/N) : ";
+	cin >> opt22;
+	if (opt22 == "y" || opt22 == "Y") {
+		system("CLS");
+		optTwo();
+	}
+	else {
+		system("CLS");
+		showMenu();
+	}
 
-	system("pause");
 
 
 }
