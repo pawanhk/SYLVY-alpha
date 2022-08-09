@@ -528,6 +528,22 @@ void optThree() {
 	cout << "######################################################################################" << endl;
 	cout << "######################################################################################" << endl;
 
-	system("pause");
+
+	string opt33;
+	string opt44;
+	cout << "Do you want to a copy of this balance sheet ?(y/n): " ;
+	cin >> opt33;
+	if(opt33 == "y" || opt33 == "Y"){
+		freopen("out.txt","w",stdout);
+	}
+	cout << "Do you want to run this program again?(y/n): " ;
+	cin >> opt44;
+	if(opt44 == "y" || opt44 == "Y"){
+		// rerun the program
+		optThree();
+	}else{
+		showMenu();
+	}
+
 	cout << endl;
 }
