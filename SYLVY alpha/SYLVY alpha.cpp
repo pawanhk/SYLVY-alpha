@@ -472,14 +472,13 @@ void optTwo() {
 	system("pause");
 	system("CLS");
 
-	cout << "    Item Names                   Price            Tax      " << endl;
+	cout << "    Item Names                   Price          Tax      " << endl;
 	cout << "-----------------------------------------------------------" << endl;
 	// insert logic**
-	cout << "names: " << endl;
 	for (int i = 0; i < counter; i++) {
-		cout << arra[i] << endl;
+		cout << "    " << arra[i] << endl;
 	}
-	cout << "prices: " << endl;
+	
 	for (int i = 0; i < counter; i++) {
 		// get the total for both
 		total_amount += stod(arrb[i]);
@@ -487,19 +486,18 @@ void optTwo() {
 		double taxi = stod(arrb[i]);
 		taxes[i] = taxi*0.06;
 		total_sales += taxes[i];
-		cout << arrb[i] << endl;
+		cout << "\t\t\t\t" << "$ " << arrb[i] << endl;
 	}
-	cout << "taxes: " << endl;
 	for (int i = 0; i < counter; i++) {
-		cout << taxes[i] << endl;
+		cout << "\t\t\t\t\t\t" << "$ " << taxes[i] << endl;
 	}
 	grand_total = total_amount + total_sales;
 	cout << "-----------------------------------------------------------" << endl;
 
-	cout << "    Total Sales                           $" << total_amount << endl;
-	cout << "    Sales Tax                             $" << total_sales << endl;
-	cout << "                             -----------    " << endl;
-	cout << "    Grand Total                           $" << grand_total << endl;
+	cout << "    Total Sales                                 $ " << total_amount << endl;
+	cout << "    Sales Tax                                   $ " << total_sales << endl;
+	cout << "                                              -----------    " << endl;
+	cout << "    Grand Total                                 $ " << grand_total << endl;
 
 	system("pause");
 
