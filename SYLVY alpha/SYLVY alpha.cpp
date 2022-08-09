@@ -34,6 +34,7 @@ int main()
 	bool run = true;
 	int opt;
 
+	cout << "sample test here " << endl;
 	showIntroduction();
 	cout << "Enter your name?: ";
 	cin >> name;
