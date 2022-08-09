@@ -9,9 +9,11 @@
 #include<iomanip>
 #include <string>
 #include <fstream>
-
-
+#include <ostream>
 using namespace std;
+
+
+
 
 void showIntroduction();
 void showSecondIntroduction(string name);
@@ -534,7 +536,10 @@ void optThree() {
 	cout << "Do you want to a copy of this balance sheet ?(y/n): " ;
 	cin >> opt33;
 	if(opt33 == "y" || opt33 == "Y"){
-		freopen("out.txt","w",stdout);
+		std::ofstream ofs{"test.txt"}; 
+	    auto cout_buff = std::cout.rdbuf(); 
+	    std::cout.rdbuf(ofs.rdbuf()); 
+	    std::cout.rdbuf(cout_buff);
 	}
 	cout << "Do you want to run this program again?(y/n): " ;
 	cin >> opt44;
