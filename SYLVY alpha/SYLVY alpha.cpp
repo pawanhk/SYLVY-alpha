@@ -597,7 +597,7 @@ void optThree() {
 
 	string opt33;
 	string opt44;
-	cout << "Do you want to a copy of this balance sheet ?(y/n): " ;
+	cout << "Do you want to a copy of this balance sheet ?(y/n) " ;
 	cin >> opt33;
 	if(opt33 == "y" || opt33 == "Y"){
 		std::ofstream ofs{"test.txt"}; 
