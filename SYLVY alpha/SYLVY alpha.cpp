@@ -439,6 +439,7 @@ void optTwo() {
 	double grand_total= 0 ;
 	double total_amount = 0;
 	double total_sales = 0;
+	int tester;
 	string a;
 	string b;
 	ifstream infile("costs.txt");
