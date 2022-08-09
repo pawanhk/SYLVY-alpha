@@ -467,6 +467,21 @@ void optTwo() {
 	cout << "*****************************************************************************" << endl;
 	
 	system("pause");
+	system("CLS");
+
+	cout << "    Item Names                   Price            Tax      " << endl;
+	cout << "-----------------------------------------------------------" << endl;
+	// insert logic**
+	cout << "-----------------------------------------------------------" << endl;
+
+	cout << "    Total Sales                           $" << "		" << endl;
+	cout << "    Sales Tax                             $" << "      " << endl;
+	cout << "                             -----------    " << endl;
+	cout << "    Grand Total                           $" << "      " << endl;
+
+
+
+
 }
 
 void optThree() {
