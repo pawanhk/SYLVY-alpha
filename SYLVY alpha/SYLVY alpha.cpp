@@ -493,15 +493,18 @@ void optTwo() {
 	}
 	// final output on the same line 
 	for (int i = 0; i < counter; i++) {
-		cout << "    " << arra[i] << "   " << arrb[i] << "   " << taxes[i] << endl;
+		cout << "    " << arra[i] << "\t\t       $ " << arrb[i] << "       $ " << taxes[i] << endl;
 	}
 	grand_total = total_amount + total_sales;
 	cout << "-----------------------------------------------------------" << endl;
 
-	cout << "    Total Sales                                 $ " << total_amount << endl;
-	cout << "    Sales Tax                                   $ " << total_sales << endl;
-	cout << "                                              -----------    " << endl;
-	cout << "    Grand Total                                 $ " << grand_total << endl;
+	cout << "    Total Sales                              $ " << total_amount << endl;
+	cout << "    Sales Tax                                $ " << total_sales << endl;
+	cout << "                                           -----------    " << endl;
+	cout << "    Grand Total                              $ " << grand_total << endl;
+
+	cout << endl << endl << endl;
+	cout << "Do you want to calculate another file worth of sales item ? (Y/N) : " << endl;
 
 	system("pause");
 
