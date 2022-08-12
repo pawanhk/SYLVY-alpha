@@ -16,7 +16,7 @@ using namespace std;
 
 
 void showIntroduction();
-void showSecondIntroduction(string name);
+void showSecondIntroduction(string name);	
 void showMenu();
 void optOne();
 int optOneRun();
@@ -162,7 +162,6 @@ void showMenu()
 	cout << "**    0	    EXIT					  **" << endl;
 	cout << "************************************************************" << endl;
 	cout << "************************************************************" << endl;
-
 }
 
 void optOne()
@@ -262,7 +261,7 @@ int optOneRun() {
 		}
 		delete[] sales_array;		// To not lose memory.
 	}
-}
+} 
 
 void optFour()
 {
