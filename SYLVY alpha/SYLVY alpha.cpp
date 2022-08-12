@@ -12,6 +12,23 @@
 #include <ostream>
 using namespace std;
 
+class RedirectStdOutput {
+public:
+	RedirectStdOutput(std::ofstream& file)
+		: _psbuf{ file.rdbuf() }, _backup{ std::cout.rdbuf() }
+	{
+		std::cout.rdbuf(_psbuf);
+	}
+
+	~RedirectStdOutput() {
+		std::cout.rdbuf(_backup);
+	}
+
+private:
+	std::streambuf* _psbuf;
+	std::streambuf* _backup;
+};
+
 
 
 
@@ -600,10 +617,45 @@ void optThree() {
 	cout << "Do you want to a copy of this balance sheet ?(y/n) " ;
 	cin >> opt33;
 	if(opt33 == "y" || opt33 == "Y"){
-		std::ofstream ofs{"test.txt"}; 
-	    auto cout_buff = std::cout.rdbuf(); 
-	    std::cout.rdbuf(ofs.rdbuf()); 
-	    std::cout.rdbuf(cout_buff);
+		ofstream outfile;
+		outfile.open("outfile.txt");
+		if (outfile.is_open()) {
+			outfile << "#####################################################################################" << endl;
+			outfile << "################# C H E C K B O O K  B A L A N C E S H E E T ########################" << endl;
+			outfile << "#####################################################################################" << endl;
+			outfile << "*                                                                                   *" << endl;
+			outfile << "*																				     *" << endl;
+			outfile << "            DEPOSITS                     Withdrawls                    BALANCE	      " << endl;
+			outfile << "#####################################################################################" << endl;
+			outfile << "*                                                                                   *" << endl;
+			for (int i = 0; i < dep_amount; i++)
+			{
+				outfile << "\t       " << deposits[i] << endl;
+			}
+
+			for (int i = 0; i < with_amount; i++)
+			{
+				outfile << " \t\t\t\t\t     " << withd[i] << "\t\t" << endl;
+			}
+
+			for (int i = 0; i <= with_amount; i++)
+			{
+				balance[i + 1] = balance[i] - withd[i];
+				outfile << "\t\t\t\t\t\t\t\t\t " << balance[i] << "\t\t\t\t" << endl;
+			}
+
+			outfile << "*                                                                                    *" << endl;
+			outfile << "*                                                                                    *" << endl;
+			outfile << "*                                                                                    *" << endl;
+			outfile << "*                                                                                    *" << endl;
+			outfile << "*                                                                                    *" << endl;
+			outfile << "*                                                                                    *" << endl;
+			outfile << "*                                                                                    *" << endl;
+			outfile << "######################################################################################" << endl;
+			outfile << "######################################################################################" << endl;
+			cout << "file has been created !" << endl;
+		}
+
 	}
 	cout << "Do you want to run this program again?(y/n): " ;
 	cin >> opt44;
