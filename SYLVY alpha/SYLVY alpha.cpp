@@ -16,14 +16,14 @@ using namespace std;
 
 
 void showIntroduction();
-void showSecondIntroduction(string name);	
+void showSecondIntroduction(string name);
 void showMenu();
 void optOne();
 int optOneRun();
 void optFour();
 int optFourRun();
 void showError();
-void optTwo();
+int optTwo();
 int optTwoRun();
 void optThree();
 int optThreeRun();
@@ -34,9 +34,6 @@ int main()
 	// variable declaration
 	string name;
 	bool run = true;
-	int opt;
-
-	cout << "sample test here " << endl;
 	showIntroduction();
 	cout << "Enter your name?: ";
 	cin >> name;
@@ -45,10 +42,9 @@ int main()
 	system("pause");
 	system("CLS");
 	// Main loop goes here.
-	// read main loop 
-	while (run)
-	{
+	while (run) {
 		showMenu();
+		int opt;
 		cout << "Enter your selection here: ";
 		cin >> opt;
 		if (opt == 0)
@@ -60,7 +56,7 @@ int main()
 			cout << "***************      C O M E  A G A I N     ****************" << endl;
 			cout << "************************************************************" << endl;
 			cout << "************************************************************" << endl;
-			break;
+			return 11;
 		}
 		if (opt == 1)
 		{
@@ -74,40 +70,44 @@ int main()
 				int result = optOneRun();
 				if (result == 1) {
 					system("CLS");
+					runOne = false;
 					break;
 				}
 			}
+			continue;
 		}
 		if (opt == 2) {
 			system("CLS");
 			optTwo();
+			continue;
 		}
 		if (opt == 3) {
 			system("CLS");
 			optThree();
+			continue;
 		}
 		if (opt == 4) {
 			system("CLS");
 			optFourRun();
+			continue;
 		}
-		else {
-			string opte;
+		if (opt != 1 || opt != 2 || opt != 3 || opt != 4) {
 			system("CLS");
 			showError();
+			string opte;
 			cout << "Would you like to re-enter the main menu? (Y/N): ";
 			cin >> opte;
 			if (opte == "y" || opte == "Y") {
 				system("CLS");
-				continue;
 			}
 			else {
 				break;
 			}
-			break;
 		}
-		
 	}
+	
 }
+
 //All functions defined here
 void showIntroduction()
 {
@@ -147,7 +147,7 @@ void showSecondIntroduction(string name)
 }
 
 void showMenu()
-{
+{ 
 	cout << "************************************************************" << endl;
 	cout << "************************************************************" << endl;
 	cout << "******************   \t   C M P S C   \t     ***************" << endl;
@@ -162,6 +162,8 @@ void showMenu()
 	cout << "**    0	    EXIT					  **" << endl;
 	cout << "************************************************************" << endl;
 	cout << "************************************************************" << endl;
+	cout << "Enter your selection here: ";
+
 }
 
 void optOne()
@@ -261,7 +263,7 @@ int optOneRun() {
 		}
 		delete[] sales_array;		// To not lose memory.
 	}
-} 
+}
 
 void optFour()
 {
@@ -434,7 +436,7 @@ void showError() {
 	cout << "************************************************************" << endl;
 }
 
-void optTwo() {
+int optTwo() {
 	double grand_total= 0 ;
 	double total_amount = 0;
 	double total_sales = 0;
@@ -512,7 +514,7 @@ void optTwo() {
 	}
 	else {
 		system("CLS");
-		showMenu();
+		return 1;
 	}
 
 
@@ -608,9 +610,10 @@ void optThree() {
 	cin >> opt44;
 	if(opt44 == "y" || opt44 == "Y"){
 		// rerun the program
+		system("CLS");
 		optThree();
 	}else{
-		showMenu();
+		system("CLS");
 	}
 
 	cout << endl;
